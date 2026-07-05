@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>공간 역학 동역학적 시뮬레이터 (V8 Final Edition)</title>
+  <title>Geomechanical Physics Simulator (V8 Final Edition)</title>
   <!-- Google Fonts: JetBrains Mono & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -278,14 +278,14 @@
   <div class="container">
     <header>
       <div>
-        <h1>공간 역학 동역학적 시뮬레이터 (V8 Final Edition)</h1>
-        <p class="subtitle">제1부 4장~6장 및 다중 연결 위상 튜브(Phase Tube) 모델에 기반한 결정론적 궤적 및 물리적 수렴성 검증</p>
+        <h1>Geomechanical Physics Simulator (V8 Final Edition)</h1>
+        <p class="subtitle">Deterministic trajectories and physical convergence verification based on Chapters 4-6 and the Multiply-Connected Phase Tube model.</p>
       </div>
       <div class="tab-group" id="tabGroup">
-        <button class="tab-btn active blue" data-mode="slit">4장. 마디점 정칙화</button>
-        <button class="tab-btn" data-mode="decoherence">5장. 위상 난류 붕괴</button>
-        <button class="tab-btn" data-mode="mass">6장. 게이지 점성 및 거시 극한</button>
-        <button class="tab-btn" data-mode="omega">🧩 다중 연결 위상 얽힘 (Phase Tube)</button>
+        <button class="tab-btn active blue" data-mode="slit">Ch 4. Nodal Regularization</button>
+        <button class="tab-btn" data-mode="decoherence">Ch 5. Phase Turbulence Collapse</button>
+        <button class="tab-btn" data-mode="mass">Ch 6. Gauge Viscosity & Macro Limit</button>
+        <button class="tab-btn" data-mode="omega">🧩 Multiply-Connected Entanglement</button>
       </div>
     </header>
 
@@ -297,20 +297,20 @@
 
       <!-- Parameters Controllers -->
       <div class="control-panel">
-        <div class="panel-title">매개변수 조정</div>
+        <div class="panel-title">Parameters Control</div>
 
         <!-- Slit Mode Sliders -->
         <div id="controls-slit" class="space-y-4">
           <div class="slider-group">
             <div class="slider-header">
-              <span>슬릿 간격 (Slit Spacing)</span>
+              <span>Slit Spacing</span>
               <span class="slider-value blue" id="val-slitDist">30px</span>
             </div>
             <input type="range" id="slide-slitDist" min="15" max="60" value="30" class="accent-blue">
           </div>
           <div class="slider-group" style="margin-top: 1rem;">
             <div class="slider-header">
-              <span>공간 진동 강도 (Q<sub>s</sub>)</span>
+              <span>Quantum Potential Amplitude (Q<sub>s</sub>)</span>
               <span class="slider-value blue" id="val-qsAmplitude">4</span>
             </div>
             <input type="range" id="slide-qsAmplitude" min="1" max="10" value="4" class="accent-blue">
@@ -321,14 +321,14 @@
         <div id="controls-decoherence" class="hidden">
           <div class="slider-group">
             <div class="slider-header">
-              <span>관측 위상 난류 에너지 (E_obs)</span>
+              <span>Observation Noise Energy (E_obs)</span>
               <span class="slider-value red" id="val-eObs">0.0 GeV</span>
             </div>
             <input type="range" id="slide-eObs" min="0" max="3" step="0.1" value="0" class="accent-red">
           </div>
           <div class="slider-group" style="margin-top: 1rem;">
             <div class="slider-header">
-              <span>진공 열역학적 온도 (T_vac)</span>
+              <span>Vacuum Temperature (T_vac)</span>
               <span class="slider-value purple" id="val-tVac">1.5 K</span>
             </div>
             <input type="range" id="slide-tVac" min="1.0" max="3.0" step="0.1" value="1.5" class="accent-purple">
@@ -339,14 +339,14 @@
         <div id="controls-mass" class="hidden">
           <div class="slider-group">
             <div class="slider-header">
-              <span>입자 질량 (m)</span>
+              <span>Particle Mass (m)</span>
               <span class="slider-value amber" id="val-mass">1</span>
             </div>
             <input type="range" id="slide-mass" min="1" max="100" value="1" class="accent-amber">
           </div>
           <div class="slider-group" style="margin-top: 1rem;">
             <div class="slider-header">
-              <span>공간 기하 점성 (γ)</span>
+              <span>Space Viscosity Friction (γ)</span>
               <span class="slider-value emerald" id="val-gammaViscosity">0.00</span>
             </div>
             <input type="range" id="slide-gammaViscosity" min="0" max="2" step="0.1" value="0" class="accent-emerald">
@@ -357,20 +357,20 @@
         <div id="controls-omega" class="hidden">
           <div class="slider-group" id="grp-pinch">
             <div class="slider-header">
-              <span>목 부분 꼬임 강도 (Pinch)</span>
+              <span>Neck Pinch Strength</span>
               <span class="slider-value purple" id="val-pinchStrength">1.80</span>
             </div>
             <input type="range" id="slide-pinchStrength" min="1.0" max="2.5" step="0.05" value="1.8" class="accent-purple">
           </div>
           <div class="slider-group" style="margin-top: 1rem;" id="grp-junction">
             <div class="slider-header">
-              <span>주 접합점 높이 (Tension)</span>
+              <span>Junction Tension Height</span>
               <span class="slider-value purple" id="val-junctionHeight">4.5</span>
             </div>
             <input type="range" id="slide-junctionHeight" min="2.0" max="6.0" step="0.2" value="4.5" class="accent-purple">
           </div>
           <div style="margin-top: 1.25rem;">
-            <button id="btn-collapse" class="action-btn">위상 붕괴 시뮬레이션</button>
+            <button id="btn-collapse" class="action-btn">Simulate Wave Collapse</button>
           </div>
         </div>
 
@@ -456,8 +456,7 @@
       hHistory = [];
       isDecohering = false;
       decohereProgress = 0;
-      frameCount = 0;
-      btnCollapse.textContent = '위상 붕괴 시뮬레이션';
+      btnCollapse.textContent = 'Simulate Wave Collapse';
       btnCollapse.style.backgroundColor = '#991b1b';
       document.getElementById('grp-pinch').classList.remove('disabled');
       document.getElementById('grp-junction').classList.remove('disabled');
@@ -532,7 +531,7 @@
         resetSimulation();
       } else {
         isDecohering = true;
-        btnCollapse.textContent = '리셋';
+        btnCollapse.textContent = 'Reset';
         btnCollapse.style.backgroundColor = '#27272a';
         document.getElementById('grp-pinch').classList.add('disabled');
         document.getElementById('grp-junction').classList.add('disabled');

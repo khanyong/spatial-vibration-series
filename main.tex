@@ -1,0 +1,136 @@
+% !TEX root = main08_en.tex
+\documentclass[reprint,amsmath,amssymb,aps,prd]{revtex4-2}
+
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{bm}
+\usepackage{hyperref}
+
+\begin{document}
+
+\preprint{APS/123-QED}
+
+\title{Mechanics of Spatial Vibration I: A Geomechanical Reinterpretation of Wave-Particle Duality and Phase Turbulence in Quantum Decoherence}
+
+\author{Kwang Yong Yoo}
+\email{khanyong.yoo@gmail.com}
+\affiliation{Independent Researcher \\ (Interactive simulations supporting this model are available in the supplementary materials)}
+
+\date{\today}
+
+\begin{abstract}
+The Copenhagen interpretation of quantum mechanics describes microscopic systems via probabilistically interpreted wave functions, refraining from assigning definite classical properties prior to observation. To address the conceptual tension associated with wave-particle duality, this paper proposes the \textbf{Geometrical Fluctuation of Space} hypothesis. This model attributes wave-like phenomena to dynamical fluctuations of the spatial background, treating quanta as definite particle-like entities guided by this geometry. 
+
+To resolve the probability non-conservation inherent in ad-hoc damping models, we introduce a phenomenological, non-linear modification to the Schr\"{o}dinger equation. Incorporating a real-valued, gauge-invariant spatial geometric viscosity term ($+\gamma(S - \langle S \rangle)$) analogous to the Kostin formulation, we identify a spatial-vibration potential, $Q_s$. We demonstrate that while probability density is strictly conserved ($\partial\rho/\partial t + \nabla\cdot(\rho\mathbf{v})=0$), the mechanical trajectory experiences effective damping. Furthermore, the nodal singularity divergence ($R \to 0$) is mathematically resolved via quantized topological defects; the infinite attractive potential well of $Q_s$ is exactly canceled by the divergent centrifugal phase kinetic energy, bypassing singularities and preserving geometric regularity without arbitrary cutoffs.
+
+Measurement-induced decoherence is dynamically modeled via an interaction Hamiltonian injecting high-frequency thermodynamic noise into the spatial phase ($S$). This generates \textbf{`Phase Turbulence'}, exponentially suppressing the off-diagonal elements of the reduced density matrix upon ensemble averaging. To distinguish this model from standard Markovian decoherence, we predict a novel \textbf{`Tensor-Thermodynamic Scaling Law'} where the geomechanical decoherence time scales non-Markovianly as $\tau_{dec} \sim \hbar (\rho_{\mathrm{fluid}} c^2) d^3 / (k_B T_{vac})^2$. By preserving unitarity and bridging particle-scale geodynamics with effective macroscopic Newtonian behavior ($\lim_{m \to \infty} \mathbf{F}_{\mathrm{space}} = 0$), this paper proposes a rigorous deterministic framework without relying on $3N$-dimensional metaphysical abstractions.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+Quantum mechanics is one of the most successful theoretical frameworks for describing microscopic phenomena, yet its Copenhagen interpretation leaves unresolved questions concerning the physical status of quantum states prior to measurement \cite{Einstein1935}. In particular, the use of a probabilistically interpreted wave function and the collapse postulate raise questions about whether microscopic systems possess definite properties independent of observation.
+
+To address this conceptual gap, this paper proposes the Spatial Vibration hypothesis, which attributes wave-like quantum phenomena to geometric fluctuations of the underlying spatial background in physical 3D space. The proposed framework is mathematically related to the polar decomposition of the Schr\"{o}dinger equation used in Madelung-type and Bohmian formulations \cite{Madelung1927, Bohm1952}. However, it avoids the metaphysical abstraction of $3N$-dimensional configuration space by treating the guiding potential as an effective manifestation of spatial geometric fluctuation in physical 3D space, proposing a deterministic mechanical framework subject to strict mathematical and topological regularities.
+
+\section{Spatial Vibration Hypothesis}
+
+\subsection{Definite Reality of Microscopic Particles}
+For the nonrelativistic systems considered in this paper, microscopic particles are postulated to possess definite particle-like reality and well-defined trajectories independent of observation. The probabilistic character of quantum phenomena is not attributed to an ontological dispersion of the particle itself, but to the statistical ensemble of initial conditions traversing the spatial-vibration structure.
+
+\subsection{Externalization of Wave-like Behavior}
+Interference patterns in the double-slit experiment are proposed to arise from geometric fluctuations of the apparently empty spatial background at microscopic scales. The particle is assumed to be dynamically guided by spatial variations of the underlying geometric field.
+
+\subsection{Inertial Convergence to the Macroscopic World}
+The acceleration induced by spatial-vibration guidance is assumed to decrease as the relevant mass scale increases. Under appropriate macroscopic conditions, the spatial-vibration guidance term becomes negligible relative to classical forces, yielding an effective convergence toward Newtonian behavior.
+
+\section{Mathematical Formulation: Nonlinear Dynamics and Topological Regularization}
+
+\subsection{Gauge-Invariant Non-linear Modified Schr\"{o}dinger Equation}
+To naturally derive quantum dissipation without violating probability conservation (unitarity), we reject imaginary potentials that lead to unphysical particle loss. Instead, drawing from the Kostin friction model for open quantum systems \cite{Kostin1972}, we introduce a phenomenological non-linear, real-valued term representing the geomechanical viscosity of the spatial tensor fluid. To strictly preserve the global gauge invariance of the wave function ($\psi \to \psi e^{i\theta}$), the viscosity term must subtract the spatial expectation value of the phase. The modified equation is postulated as:
+\begin{equation}
+i\hbar \frac{\partial \psi}{\partial t} = \left[ -\frac{\hbar^2}{2m} \nabla^2 + V(\mathbf{r}) + \gamma(S - \langle S \rangle) \right] \psi
+\end{equation}
+Crucially, $\gamma$ is not a universal constant of the vacuum. It acts as an effective environmental parameter that emerges dynamically only during macroscopic thermodynamic interactions (e.g., measurement). For isolated microscopic systems, $\gamma \to 0$, perfectly restoring standard linear quantum mechanics and preventing the unphysical orbital decay of isolated atoms.
+
+\subsection{Polar Transformation and the Continuity Equation}
+Using polar decomposition $\psi(\mathbf{r}, t) = R(\mathbf{r}, t) e^{iS(\mathbf{r}, t)/\hbar}$, we separate the imaginary part to yield the continuity equation:
+\begin{equation}
+\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0
+\end{equation}
+where $\rho = R^2$ and $\mathbf{v} = \nabla S / m$. Because the dissipative term $+\gamma(S - \langle S \rangle)$ is purely real, it does not enter the imaginary part. Probability density $\rho$ is strictly conserved globally, maintaining perfect mathematical consistency with the Born rule.
+
+\subsection{Quantum Hamilton-Jacobi Equation and Spatial Vibration Potential}
+Separating the real part yields the modified Hamilton-Jacobi equation:
+\begin{equation}
+\frac{\partial S}{\partial t} + \frac{(\nabla S)^2}{2m} + V(\mathbf{r}) + Q_s + \gamma(S - \langle S \rangle) = 0
+\end{equation}
+where $Q_s \equiv -\frac{\hbar^2}{2m} \frac{\nabla^2 R}{R}$ is defined as the scalar \textbf{Spatial-Vibration Potential}.
+
+\subsection{Topological Regularization of Nodal Singularities}
+A severe mathematical dilemma occurs at destructive interference nodes where $R \to 0$. In a 2D cylindrical coordinate system near a vortex core, the amplitude scales as $R \propto r$. Consequently, the Laplacian yields $\nabla^2 R \approx 1/r$, leading $Q_s$ to diverge as $-\frac{\hbar^2}{2m r^2}$. This creates an infinite \textit{attractive well}, threatening to trap the particle unphysically.
+
+However, nodes are not mere amplitude zeros but \textbf{Quantized Topological Vortices}. Around the core, the phase field circulates as $S = \hbar \theta$, generating a phase gradient $|\nabla S| = \hbar/r$. When substituted into the phase kinetic energy term of Eq. (3), we obtain exactly $+\frac{\hbar^2}{2m r^2}$. 
+
+Thus, the centrifugal repulsion from the topological phase rotation perfectly and exactly cancels the infinite attractive well of $Q_s$:
+\begin{equation}
+\frac{(\nabla S)^2}{2m} + Q_s = \frac{\hbar^2}{2m r^2} - \frac{\hbar^2}{2m r^2} = 0 \quad (\text{as } r \to 0)
+\end{equation}
+This exact mathematical cancellation acts as an intrinsic self-regularization mechanism, allowing trajectories to bypass the singularity safely along macroscopic phase circulations ($\oint \mathbf{v} \cdot d\mathbf{l} \neq 0$).
+
+\subsection{Resolution of the 3N-Dimensional Dilemma}
+Traditional hidden-variable models define multi-particle $Q_s$ in an abstract $3N$-dimensional configuration space, conceding non-locality. We propose that $3N$-dimensional non-separability is a mathematical projection of a \textbf{Multiply-connected 3D Topology}. Entangled particles remain in physical 3D space but share a geometrical phase through highly warped, localized topological phase tubes, preserving relativistic causality while exhibiting apparent non-local correlations.
+
+\section{Geomechanical Reinterpretation of Selected Quantum Phenomena}
+
+\subsection{Guidance Equation and Statistical Ensemble}
+Taking the gradient of Eq. (3) (noting that $\nabla \langle S \rangle = 0$) yields the guidance equation:
+\begin{equation}
+m \frac{d\mathbf{v}}{dt} = -\nabla V(\mathbf{r}) - \nabla Q_s(\mathbf{r}, t) - \gamma m \mathbf{v}
+\end{equation}
+This flawlessly proves that particles are guided by external potentials, geometrical curvature ($Q_s$), and experience a viscous drag force ($-\gamma m \mathbf{v}$). The double-slit interference pattern $|\psi|^2$ is interpreted as a statistical ensemble of particle trajectories accumulating along stable valleys of $Q_s$, conditional on the initial Born-rule distribution $\rho(\mathbf{r},0) = |\psi(\mathbf{r},0)|^2$ \cite{Couder2006}.
+
+\subsection{Interpretive Extensions}
+Transitions are interpreted as rapid reconfigurations of spatial geometry. Quantum tunneling is reinterpreted as a phase-mediated transmission process across a barrier. Superposition represents a dynamically balanced configuration at a geometrical saddle point (unstable mechanical equilibrium). 
+
+\section{Dynamical Derivation of Decoherence and Falsifiable Predictions}
+
+\subsection{Phase Turbulence and Density Matrix Decoherence}
+To address measurement mechanics without unphysical amplitude flattening, we introduce an interaction Hamiltonian ($H_{int}$). This interaction injects broadband, high-frequency thermodynamic noise directly into the spatial phase ($S$), generating severe \textbf{`Phase Turbulence'} within the spatial fluid, which chaotically scrambles the velocity field $\mathbf{v}$. 
+
+While the probability density $\rho$ remains strictly conserved, when taking the ensemble average over the macroscopic observation timescale $\tau$, the reduced density matrix $\rho_{sys}(\mathbf{r}, \mathbf{r}') = \langle \psi(\mathbf{r})\psi^*(\mathbf{r}') \rangle_{\tau}$ undergoes rapid exponential suppression of its off-diagonal interference terms ($\langle e^{i(S_A - S_B)/\hbar} \rangle \to 0$). The statistical ensemble mechanically blurs into a classical mixed state, elegantly explaining decoherence without violating the collapse postulate \cite{Zurek2003}.
+
+\subsection{Falsifiable Prediction: Tensor-Thermodynamic Scaling Law}
+To distinguish this geomechanical damping from standard Markovian open-system dynamics, we propose a falsifiable prediction. Because our decoherence is driven by the geometric viscosity of the spatial fluid rather than simple Markovian open-system dynamics, it must exhibit a non-linear dependence on the thermodynamic state of the vacuum.
+
+Dimensional analysis of the geomechanical noise yields a \textbf{`Tensor-Thermodynamic Scaling Law'}:
+\begin{equation}
+\tau_{dec} \sim \frac{\hbar (\rho_{\mathrm{fluid}} c^2) d^3}{(k_B T_{vac})^2}
+\end{equation}
+where $\hbar$ has dimensions of $[E \cdot T]$, $\rho_{\mathrm{fluid}} c^2$ is the energy density $[E \cdot L^{-3}]$, $d^3$ is the interaction volume $[L^3]$, and $(k_B T_{vac})^2$ is the squared thermal energy $[E^2]$. This perfectly balances to units of time ($[T]$). Observing this specific quadratic geometric deviation ($\propto T_{vac}^{-2}$) from standard linear theory in the ultra-short temporal regime would serve as a crucial experimental verification for the spatial geomechanics framework.
+
+\subsection{Apparent Simultaneity and Causality in Entanglement}
+Entanglement is interpreted as a nonseparable phase correlation. When measurement scrambles the spatial phase of Particle A, this disturbance propagates strictly obeying relativistic causality ($v \le c$). However, because the internal geometrical distance traversing the multiply-connected spatial junction is effectively zero, the physical transmission time inevitably becomes $t \approx 0$. The apparent simultaneity is thus a deterministic illusion, preserving the no-signaling condition.
+
+\section{The Macro-Micro Boundary: Inertial Suppression}
+Under the condition $\nabla (\nabla^2 R/R) = o(m)$, the spatial-guidance force becomes negligible in the large-mass limit:
+\begin{equation}
+\lim_{m \to \infty} \mathbf{F}_{\mathrm{space}} = 0
+\end{equation}
+In this limit, the acceleration induced by microscopic spatial-guidance is overwhelmingly suppressed by classical inertia. Consequently, the effective equation of motion structurally converges toward the macroscopic Newtonian form $m \frac{d\mathbf{v}}{dt} \approx -\nabla V(\mathbf{r})$.
+
+\section{Conclusion}
+This study proposes a deterministic geomechanical reinterpretation of selected quantum phenomena. By integrating a gauge-invariant geometric viscosity term (Kostin-like) and utilizing the exact mathematical cancellation between centrifugal phase kinetic energy and the quantum potential well at nodal points, we resolved the unphysical singularities and probability conservation violations inherent in preceding models. 
+
+Measurement-induced decoherence is dynamically modeled as phase turbulence scrambling the guidance field, rigorously suppressing off-diagonal density matrix elements. The introduction of the dimensionally exact Tensor-Thermodynamic Scaling Law ($\tau_{dec} \sim \hbar (\rho_{\mathrm{fluid}} c^2) d^3 / (k_B T_{vac})^2$) elevates this framework from a philosophical interpretation to an empirically testable deterministic physical model. Extensions to $3N$-dimensional non-locality through multiply-connected 3D topologies remain a subject for future development.
+
+\begin{thebibliography}{99}
+\bibitem{Einstein1935} A. Einstein, B. Podolsky, and N. Rosen, \textit{Phys. Rev.} \textbf{47}, 777 (1935).
+\bibitem{Madelung1927} E. Madelung, \textit{Z. Phys.} \textbf{40}, 322 (1927).
+\bibitem{Bohm1952} D. Bohm, \textit{Phys. Rev.} \textbf{85}, 166 (1952).
+\bibitem{Kostin1972} M. D. Kostin, On the Schrödinger-Langevin Equation, \textit{J. Chem. Phys.} \textbf{57}, 3589 (1972).
+\bibitem{Couder2006} Y. Couder and E. Fort, \textit{Phys. Rev. Lett.} \textbf{97}, 154101 (2006).
+\bibitem{Zurek2003} W. H. Zurek, \textit{Rev. Mod. Phys.} \textbf{75}, 715 (2003).
+\end{thebibliography}
+
+\end{document}
